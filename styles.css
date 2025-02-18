@@ -63,6 +63,10 @@ body {
     height: 100svh;
 }
 
+p {
+    color: hsl(0, 0%, 40%);
+}
+
 .container {
     display: grid;
     grid-template-rows: 1fr;
@@ -118,6 +122,10 @@ body {
     color: hsl(0, 0%, 100%);
 }
 
+.sidebar a:active {
+    color: orange;
+}
+
 .section-one > a,
 .section-two > a,
 .section-three > a {
@@ -136,7 +144,7 @@ body {
 .main {
     grid-area: main;
     display: grid;
-    grid-template-rows: 1fr 5fr;
+    grid-template-rows: auto 5fr;
     grid-template-areas: 
         'header'
         'content';
@@ -146,9 +154,223 @@ body {
 .header {
     background-color: hsl(0, 0%, 100%);
     grid-area: header;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-template-columns: 2fr 1fr;
+    padding: 1.5rem 0 0 1.5rem;
+    gap: 1rem;
 }
 
 .content {
     background-color: hsl(214, 32%, 91%);
     grid-area: content;
+}
+
+.search-bar {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    align-items: center;
+    gap: .5rem;
+}
+
+.search-bar button {
+    border: 0;
+    background-color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.search-bar button img {
+    height: 30px;
+    width: 30px;
+}
+
+.search-bar input[type=search] {
+    height: 2rem;
+    width: 75ch;
+    border: 0;
+    background-color: hsl(214, 32%, 91%);
+    border-radius: 1rem;
+    padding: 0.8rem;
+}
+
+.notifications {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 4rem 0 0;
+}
+
+.notifications button {
+    border: 0;
+    background-color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.notifications .bell img {
+    height: 30px;
+    width: 30px;
+}
+
+.pfp img {
+    height: 60px;
+    width: 60px;
+}
+
+.user-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.welcome {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto auto;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 0 1rem 0.5rem;
+}
+
+.welcome-pfp {
+    height: 80px;
+    width: 80px;
+}
+
+.welcome-message {
+    font-weight: 600;
+}
+
+.welcome-message div + div {
+    font-size: 1.5rem;
+} 
+
+.actions {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: end;
+    align-content: center;
+    gap: 1rem;
+    padding: 0 3.5rem 0 0;
+}
+
+.actions button {
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(201, 78%, 46%);
+    border: 0;
+    height: 2.5rem;
+    width: 7rem;
+    border-radius: 1.5rem;
+    cursor: pointer;
+}
+
+.actions button:active {
+    background-color: orange;
+}
+
+
+.content {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 2fr minmax(400px, 0.2fr);
+    grid-template-areas: 
+        'projects announcements'
+        'projects trending'
+        'projects .';
+    padding: 1rem;
+    gap: 2rem;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.projects > h2,
+.announcements > h2,
+.trending > h2 {
+    padding: 0 0 1rem 0;
+}
+
+
+.announcements {
+    grid-area: announcements;
+}
+
+.trending {
+    grid-area: trending;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: hsl(0, 0%, 100%);
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: 1rem;
+    border-left: 10px solid orange;
+    border-radius: 0.8rem;
+    box-shadow: 4px 4px 4px hsl(212, 15%, 83%);
+}
+
+.card > div {
+    justify-self: end;
+}
+
+.card button {
+    border: 0;
+    background-color: hsl(0, 0%, 100%);
+    cursor: pointer;
+}
+
+.card button img {
+    height: 30px;
+    width: 30px;
+}
+
+.announcements > div,
+.trending > div {
+    background-color: hsl(0, 0%, 100%);
+    padding: 1rem;
+    border-radius: 0.8rem;
+    box-shadow: 4px 4px 4px hsl(212, 15%, 83%);
+}
+
+.announcement {
+    padding: 1rem;
+}
+
+.announcements > div > div:not(:last-child) {
+    border-bottom: 2px solid hsl(0, 0%, 89%);
+} 
+
+.trending > div {
+    display: grid;
+    grid-template-columns: auto;
+    gap: 1rem;
+}
+
+.trending-user button {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    text-align: start;
+    background-color: hsl(0, 0%, 100%);
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 1rem;
+}
+
+.trending-user button img {
+    height: 60px;
+    width: 60px;
 }
